@@ -25,12 +25,12 @@ public class FunStuffWhoop extends JFrame{
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         // TODO code application logic here
         new FunStuffWhoop();
     }
     
-    public FunStuffWhoop() {
+    public FunStuffWhoop() throws FileNotFoundException {
         super("Yippe!");
         
         setSize(WIDTH, HEIGHT);

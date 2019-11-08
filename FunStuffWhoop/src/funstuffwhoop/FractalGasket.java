@@ -25,10 +25,13 @@ public class FractalGasket {
         int b = (int)(Math.random() * 225);
         Color rand = new Color(r, g, b);
         window.setColor(rand);
+        System.out.println(x1 + " " + x2 + " " + x3 + " " + y1 + " " + y2 + " " + y3);
         int xPoints[] = {x1, x2, x3};
         int yPoints[] = {y1, y2, y3};
+        System.out.println("no breaks before fill");
         window.fillPolygon(xPoints, yPoints, 3);
-        if (x2 - x1 > 3) {
+        System.out.println("no breaks after fill");
+        if (x2 - x1 > 150) {
             fracture(window, x1, (x2 - x1)/2 + x1, x2, y1, (y1 - y2)/2 + y2, y3);
             fracture(window, (x2 - x1)/2 + x1, x2, (x3 - x2)/2 + x2, (y2 - y1)/2 + y1, y2, (y3 - y2)/2 + y2);
             fracture(window, (x3 - x2)/2 + x1, (x2 - x1)/2 + x2, x3, y1, (y3 - y2)/2 + y2, y3);
