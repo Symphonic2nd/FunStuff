@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package funstuffwhoop;
+import java.awt.Color;
 import javax.swing.JFrame;
 import java.awt.Component;
 import java.awt.Graphics;
@@ -20,8 +21,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  * @author K1342960
  */
 public class FunStuffWhoop extends JFrame{
-    public static int WIDTH = 1000;
-    public static int HEIGHT = 600;
+    public static int WIDTH = 1600;
+    public static int HEIGHT = 800;
     /**
      * @param args the command line arguments
      */
@@ -31,17 +32,16 @@ public class FunStuffWhoop extends JFrame{
     }
     
     public FunStuffWhoop() throws FileNotFoundException {
-        super("Yippe!");
-        
+        super("FunCentral");
         setSize(WIDTH, HEIGHT);
+        setBackground(Color.WHITE);
         
-        FunCentral yippe = new FunCentral();
+        FunCentral basket = new FunCentral();
         
-        ((Component) yippe).setFocusable(true);
-        getContentPane().add(yippe);
-        setExtendedState(JFrame.MAXIMIZED_BOTH); 
-        setUndecorated(true);
+        getContentPane().add(basket);
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         setVisible(true);
         
     }
