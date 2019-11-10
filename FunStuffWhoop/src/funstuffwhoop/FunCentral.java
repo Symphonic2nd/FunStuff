@@ -23,12 +23,13 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  * @author K1342960
  */
 public class FunCentral extends JPanel{
-    private FractalGasket yippee;
+    private FractalGasket fractal;
     private int size;
     
     public FunCentral() {
-        size = 700;
-        yippee = new FractalGasket(size);
+        size = 600;
+        fractal = new FractalGasket(size);
+        
     }
     
     public void update(Graphics window) {
@@ -36,6 +37,8 @@ public class FunCentral extends JPanel{
     }
     
     public void paint(Graphics window) {
-        yippee.fracture(window, 400, size/2 + 400, size + 400, 10 + (int)(size*0.87), 10, 10 + (int)(size*0.87));
+        fractal.fracture(window, 300, size/2 + 300, size + 300, 10 + (int)((size*0.87)*1.5), 10 + (int)((size*0.87)*.5), 10 + (int)((size*0.87)*1.5));
+        fractal.fracture(window, 600, size/2 + 600, size + 600, 10 + (int)((size*0.87)*1.5), 10 + (int)((size*0.87)*.5), 10 + (int)((size*0.87)*1.5));
+        fractal.fracture(window, 450, size/2 + 450, size + 450, 10 + (int)(size*0.87), 10, 10 + (int)(size*0.87));
     }
 }

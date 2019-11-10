@@ -22,7 +22,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  */
 public class FunStuffWhoop extends JFrame{
     public static int WIDTH = 1600;
-    public static int HEIGHT = 800;
+    public static int HEIGHT = 1000;
     /**
      * @param args the command line arguments
      */
