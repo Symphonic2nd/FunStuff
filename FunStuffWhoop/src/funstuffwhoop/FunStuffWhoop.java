@@ -34,7 +34,7 @@ public class FunStuffWhoop extends JFrame{
     public FunStuffWhoop() throws FileNotFoundException {
         super("FunCentral");
         setSize(WIDTH, HEIGHT);
-        setBackground(Color.WHITE);
+        setBackground(Color.BLACK);
         
         FunCentral basket = new FunCentral();
         
