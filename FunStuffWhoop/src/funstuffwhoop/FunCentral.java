@@ -57,10 +57,34 @@ public class FunCentral extends JPanel{
                 for (int q = 0; q < 100; q++) {
                     window.setColor(new Color((int)(Math.random() * 225), (int)(Math.random() * 225), (int)(Math.random() * 225)));
                     if (q % 2 == 0) {
-                        window.fill3DRect( (i * 10) + 5, q * 10, 5, 5, true);
+                        int fd = (int)(Math.random() * 4) + 1;
+                        if (fd == 1) {
+                            window.fill3DRect( (i * 10) + 5, q * 10, 5, 5, true);
+                        }
+                        else if (fd == 2) {
+                            window.drawRect(  (i * 10) + 5, q * 10, 5, 5 );
+                        }
+                        else if (fd == 3) {
+                            window.fillOval((i * 10) + 5, q * 10, 5, 5 );
+                        }
+                        else if (fd == 4) {
+                            window.drawOval((i * 10) + 5, q * 10, 5, 5 );
+                        }
                     } 
                     else {
-                        window.fill3DRect( i * 10, q * 10, 5, 5, true);
+                        int fd = (int)(Math.random() * 4) + 1;
+                        if (fd == 1) {
+                            window.fill3DRect( i * 10, q * 10, 5, 5, true);
+                        }
+                        else if (fd == 2) {
+                            window.drawRect(  (i * 10), q * 10, 5, 5 );
+                        }
+                        else if (fd == 3) {
+                            window.fillOval((i * 10), q * 10, 5, 5 );
+                        }
+                        else if (fd == 4) {
+                            window.drawOval((i * 10), q * 10, 5, 5 );
+                        }
                     }
                 } 
             }
@@ -90,10 +114,34 @@ public class FunCentral extends JPanel{
                 for (int q = 0; q < 100; q++) {
                     window.setColor(new Color((int)(Math.random() * 225), (int)(Math.random() * 225), (int)(Math.random() * 225)));
                     if (q % 2 == 0) {
-                        window.fill3DRect( (i * 10) + 5, q * 10, 5, 5, true);
+                        int fd = (int)(Math.random() * 4) + 1;
+                        if (fd == 1) {
+                            window.fill3DRect( (i * 10) + 5, q * 10, 5, 5, true);
+                        }
+                        else if (fd == 2) {
+                            window.drawRect(  (i * 10) + 5, q * 10, 5, 5 );
+                        }
+                        else if (fd == 3) {
+                            window.fillOval((i * 10) + 5, q * 10, 5, 5 );
+                        }
+                        else if (fd == 4) {
+                            window.drawOval((i * 10) + 5, q * 10, 5, 5 );
+                        }
                     } 
                     else {
-                        window.fill3DRect( i * 10, q * 10, 5, 5, true);
+                        int fd = (int)(Math.random() * 4) + 1;
+                        if (fd == 1) {
+                            window.fill3DRect( i * 10, q * 10, 5, 5, true);
+                        }
+                        else if (fd == 2) {
+                            window.drawRect(  (i * 10), q * 10, 5, 5 );
+                        }
+                        else if (fd == 3) {
+                            window.fillOval((i * 10), q * 10, 5, 5 );
+                        }
+                        else if (fd == 4) {
+                            window.drawOval((i * 10), q * 10, 5, 5 );
+                        }
                     }
                 } 
             }
