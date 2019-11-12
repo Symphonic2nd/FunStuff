@@ -27,7 +27,7 @@ public class FunCentral extends JPanel{
     private int size;
     private int init;
     private int r, g, b;
-    private SimpleAudioPlayer aria;
+    private SimpleAudioPlayer joy;
     
     public FunCentral() {
         size = 600;
@@ -37,11 +37,11 @@ public class FunCentral extends JPanel{
         g = 0;
         b = 0;
         try {
-            aria = new SimpleAudioPlayer("MusicFiles/Aria.wav", -1);
+            joy = new SimpleAudioPlayer("MusicFiles/BundleOfJoy.wav", -1);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
             Logger.getLogger(FunCentral.class.getName()).log(Level.SEVERE, null, ex);
         }
-        aria.play();
+        joy.play();
         
     }
     
@@ -97,19 +97,10 @@ public class FunCentral extends JPanel{
         int x = (int)(Math.random()*2000);
         if (x == 999 || x == 1999) {
             int change = (int)(Math.random() * (224/3));
-            if (x == 1999 && (r + g + b) < (224 * 3) - (change * 3)){
-                r += change;
-                g += change;
-                b += change;
+            if (x == 1999) {
+                window.setColor(Color.BLACK);
+                window.fillRect(0, 0, 1600, 1000);
             }
-            else if ((r + g + b) > (change * 3)) {
-                r -= change;
-                g -= change;
-                b -= change;
-            }
-            
-            window.setColor(new Color(r, g, b));
-            window.fillRect(0, 0, 1600, 1000);
             for (int i = 0; i < 160; i++) {
                 for (int q = 0; q < 100; q++) {
                     window.setColor(new Color((int)(Math.random() * 225), (int)(Math.random() * 225), (int)(Math.random() * 225)));
