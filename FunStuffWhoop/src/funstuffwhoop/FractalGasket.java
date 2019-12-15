@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 package funstuffwhoop;
-import java.util.*;
-import java.io.*;
 import java.awt.*;
-import javax.swing.*;
 /**
  *
  * @author K1342960

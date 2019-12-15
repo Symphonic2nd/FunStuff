@@ -6,18 +6,6 @@
 package funstuffwhoop;
 import javax.swing.JPanel;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.util.*;
-import javax.imageio.ImageIO;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 /**
  *
  * @author K1342960
@@ -27,7 +15,6 @@ public class FunCentral extends JPanel{
     private int size;
     private int init;
     private int r, g, b;
-    private SimpleAudioPlayer joy;
     
     public FunCentral() {
         size = 600;
@@ -36,12 +23,6 @@ public class FunCentral extends JPanel{
         r = 0;
         g = 0;
         b = 0;
-        try {
-            joy = new SimpleAudioPlayer("MusicFiles/BundleOfJoy.wav", -1);
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-            Logger.getLogger(FunCentral.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        joy.play();
         
     }
     

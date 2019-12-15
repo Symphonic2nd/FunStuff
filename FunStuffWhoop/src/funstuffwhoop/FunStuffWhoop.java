@@ -4,16 +4,21 @@
  * and open the template in the editor.
  */
 package funstuffwhoop;
-import java.awt.Color;
-import javax.swing.JFrame;
-import java.awt.Component;
-import java.awt.Graphics;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
+import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.*;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 /**
@@ -22,7 +27,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  */
 public class FunStuffWhoop extends JFrame{
     public static int WIDTH = 1600;
-    public static int HEIGHT = 1000;
+    public static int HEIGHT = 800;
     /**
      * @param args the command line arguments
      */
@@ -32,11 +37,11 @@ public class FunStuffWhoop extends JFrame{
     }
     
     public FunStuffWhoop() throws FileNotFoundException {
-        super("FunCentral");
+        super("Snake");
         setSize(WIDTH, HEIGHT);
         setBackground(Color.BLACK);
         
-        FunCentral basket = new FunCentral();
+        Snake basket = new Snake();
         
         getContentPane().add(basket);
         
