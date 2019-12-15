@@ -27,14 +27,14 @@ public class Snake extends JPanel{
         stage = 0;
         play = false;
         direction = "right";
-        System.out.println("hi");
         ret = 0;
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
-                ret = e.getKeyCode();
+                if (e.getKeyCode() > 0) {
+                    ret = e.getKeyCode();
+                }
             } 
         });
-        System.out.println(ret);
     }
     
     public void update(Graphics window) {
@@ -44,6 +44,7 @@ public class Snake extends JPanel{
     public void paint(Graphics window) {
         window.setColor(Color.BLACK);
         window.fillRect(0, 0, 1600, 800);
+        
         
         if (direction.equals("right")) {
             for (int i = 0; i < snake.size(); i++) {
@@ -67,6 +68,7 @@ public class Snake extends JPanel{
         }
         
         window.setColor(Color.GREEN);
+        window.drawString("" + ret, 40, 100);
         for (int i = 0; i < snake.size(); i++) {
             window.fillRect(snake.get(i).getX(), snake.get(i).getY(), 30, 30);
         }
