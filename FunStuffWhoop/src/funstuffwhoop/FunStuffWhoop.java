@@ -37,12 +37,12 @@ public class FunStuffWhoop extends JFrame{
     }
     
     public FunStuffWhoop() throws FileNotFoundException {
-        super("PointLines");
+        super("Snake");
         setSize(WIDTH, HEIGHT);
         setBackground(Color.BLACK);
         
         //new PointLines( #of points, redraw bckgrnd, color, changing gradient, bouncy, changing size, fill in area)
-        PointLines basket = new PointLines(3, true, "white", false, true, false, false);
+        Snake basket = new Snake();
         
         getContentPane().add(basket);
         
