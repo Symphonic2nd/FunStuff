@@ -16,6 +16,7 @@ import javax.swing.*;
 public class PointLines extends JPanel{
     
     private ArrayList<Coordinates> coord;
+    private int orgsize;
     private int r;
     private int g;
     private int b;
@@ -28,13 +29,16 @@ public class PointLines extends JPanel{
     private boolean same;
     private boolean bouncy;
     private boolean changegrad;
+    private boolean changenumpoints;
+    private boolean fill;
     private Color set;
     
-    public PointLines(int size, boolean bckgrnd, String c, boolean cgrad, boolean boing) {
+    public PointLines(int size, boolean bckgrnd, String c, boolean cgrad, boolean boing, boolean change, boolean f) {
         coord = new ArrayList<Coordinates>();
         if (size > 5000) {
             size = 5000;
         }
+        orgsize = size;
         for (int i = 0 ; i < size; i++) {
             coord.add(new Coordinates());
         }
@@ -50,6 +54,8 @@ public class PointLines extends JPanel{
         set = Color.WHITE;
         bouncy = boing;
         changegrad = cgrad;
+        changenumpoints = change;
+        fill = f;
         if (c.toLowerCase().equals("gradient")) {
             gradient = true;
             
@@ -117,6 +123,18 @@ public class PointLines extends JPanel{
     public void paint(Graphics window) {
         if (background) {
             window.fillRect(0, 0, 1600, 801);
+        }
+
+        if (changenumpoints) {
+            int p = (int)(Math.random()*4000);
+            if (p == 0 || p == 3999) {
+                coord.add(new Coordinates());
+                System.out.println(coord.size());
+            }
+            else if ((p == 1999 || p == 2999 )&& coord.size() > orgsize) {
+                coord.remove(0);
+                System.out.println(coord.size());
+            }
         }
         
         for (int i = 0; i < coord.size(); i++) {
@@ -211,12 +229,26 @@ public class PointLines extends JPanel{
             window.setColor(new Color((int)(Math.random() * 225), (int)(Math.random() * 225), (int)(Math.random() * 225)));
         }
         
+        int[] xPoints = new int[coord.size()];
+        int[] yPoints = new int[coord.size()];
+        
         for (int i = 0; i < coord.size() - 1; i++) {
-           window.drawLine(coord.get(i).getX1(), coord.get(i).getY1(), coord.get(i + 1).getX1(), coord.get(i + 1).getY1());
+            window.drawLine(coord.get(i).getX1(), coord.get(i).getY1(), coord.get(i + 1).getX1(), coord.get(i + 1).getY1());
+            if (fill) {
+                xPoints[i] = coord.get(i).getX1();
+                yPoints[i] = coord.get(i).getY1();
+            }
         }
         if (coord.size() > 0) {
             window.drawLine(coord.get(coord.size() - 1).getX1(), coord.get(coord.size() - 1).getY1(), coord.get(0).getX1(), coord.get(0).getY1());
         }
+        
+        if (fill) {
+            xPoints[coord.size() - 1] = coord.get(coord.size() - 1).getX1();
+            yPoints[coord.size() - 1] = coord.get(coord.size() - 1).getY1();
+            window.fillPolygon(xPoints, yPoints, coord.size());
+        }
+        
         repaint();
     }
     

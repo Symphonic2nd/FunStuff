@@ -41,7 +41,8 @@ public class FunStuffWhoop extends JFrame{
         setSize(WIDTH, HEIGHT);
         setBackground(Color.BLACK);
         
-        PointLines basket = new PointLines(2, false, "gradient", true, true);
+        //new PointLines( #of points, redraw bckgrnd, color, changing gradient, bouncy, changing size, fill in area)
+        PointLines basket = new PointLines(3, true, "white", false, true, false, false);
         
         getContentPane().add(basket);
         
