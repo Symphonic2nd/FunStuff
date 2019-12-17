@@ -28,10 +28,10 @@ public class Locomotive {
     
     public void setXY(String d, int change) {
         if (d.equals("x")) {
-            x += change;
+            x = change;
         }
         else {
-            y += change;
+            y = change;
         }
     }
 }

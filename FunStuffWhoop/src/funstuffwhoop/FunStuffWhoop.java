@@ -4,30 +4,16 @@
  * and open the template in the editor.
  */
 package funstuffwhoop;
-import java.util.*;
 import java.io.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 /**
  *
  * @author K1342960
  */
 public class FunStuffWhoop extends JFrame{
-    public static int WIDTH = 1600;
-    public static int HEIGHT = 800;
+    public static int WIDTH = 1900;
+    public static int HEIGHT = 1020;
     /**
      * @param args the command line arguments
      */
@@ -43,7 +29,7 @@ public class FunStuffWhoop extends JFrame{
         
         //new PointLines( #of points, redraw bckgrnd, color, changing gradient, bouncy, changing size, fill in area)
         Snake basket = new Snake();
-        
+        ((Component) basket).setFocusable(true);
         getContentPane().add(basket);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
