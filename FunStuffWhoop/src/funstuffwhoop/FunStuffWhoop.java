@@ -12,8 +12,8 @@ import javax.swing.*;
  * @author K1342960
  */
 public class FunStuffWhoop extends JFrame{
-    public static int WIDTH = 1900;
-    public static int HEIGHT = 1020;
+    public static int WIDTH = 1600;
+    public static int HEIGHT = 800;
     /**
      * @param args the command line arguments
      */
@@ -23,12 +23,12 @@ public class FunStuffWhoop extends JFrame{
     }
     
     public FunStuffWhoop() throws FileNotFoundException {
-        super("Snake");
+        super("PointLines");
         setSize(WIDTH, HEIGHT);
         setBackground(Color.BLACK);
         
         //new PointLines( #of points, redraw bckgrnd, color, changing gradient, bouncy, changing size, fill in area)
-        Snake basket = new Snake();
+        PointLines basket = new PointLines(2, false, "gradient", true, true, true, false);
         ((Component) basket).setFocusable(true);
         getContentPane().add(basket);
         
