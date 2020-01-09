@@ -138,7 +138,7 @@ public class PointLines extends JPanel{
         }
         if (draw) {
             if (background) {
-                window.fillRect(0, 0, 1900, 1020);
+                window.fillRect(0, 0, 1600, 800);
             }
             
             if (changenumpoints) {

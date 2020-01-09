@@ -19,10 +19,10 @@ public class Coordinates {
     private int y2;
     
     public Coordinates() {
-        x1 = (int)(Math.random() * 1900);
-        y1 = (int)(Math.random() * 1020);
-        x2 = (int)(Math.random() * 1900);
-        y2 = (int)(Math.random() * 1020);
+        x1 = (int)(Math.random() * 1600);
+        y1 = (int)(Math.random() * 800);
+        x2 = (int)(Math.random() * 1600);
+        y2 = (int)(Math.random() * 800);
     }
     
     public int getX1() {
@@ -46,7 +46,7 @@ public class Coordinates {
     }
     
     public void setX2() {
-        x2 = (int)(Math.random() * 1900);
+        x2 = (int)(Math.random() * 1600);
     }
     
     public int getY2() {
@@ -54,6 +54,6 @@ public class Coordinates {
     }
     
     public void setY2() {
-        y2 = (int)(Math.random() * 1020);
+        y2 = (int)(Math.random() * 800);
     }
 }
